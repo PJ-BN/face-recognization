@@ -13,23 +13,31 @@ class MainWindow(QMainWindow):
         self.show()
 
     def badd_record(self):
-        badd_re = QPushButton(self)
-        badd_re.setText("Add Record")
-        badd_re.setGeometry(190, 100, 140, 40)
-        badd_re.clicked.connect(self.say_hello)
-        badd_re.show()
+        self.badd_re = QPushButton(self)
+        self.badd_re.setText("Add Record")
+        self.badd_re.setGeometry(190, 100, 140, 40)
+        self.badd_re.clicked.connect(self.say_hello)
+        self.badd_re.show()
 
     def btake_attendance(self):
-        btake_att = QPushButton(self)
-        btake_att.setText("Take Attendance")
-        btake_att.setGeometry(190, 170, 140, 40)
-        btake_att.clicked.connect(self.say_hello)
-        btake_att.show()
+        self.btake_att = QPushButton(self)
+        self.btake_att.setText("Take Attendance")
+        self.btake_att.setGeometry(190, 170, 140, 40)
+        self.btake_att.clicked.connect(self.say_hello)
+        self.btake_att.show()
 
     @Slot()
-    def say_hello(self):
+    def connect_add_record(self):
 
         print("Button clicked, Hello!")
+        self.badd_re.hide()
+        self.btake_att.hide()
+
+    @Slot()
+    def connect_take_attendance(self):
+        print("Button clicked")
+        self.badd_re.hide()
+        self.btake_att.hide()
 
 
 def create():
