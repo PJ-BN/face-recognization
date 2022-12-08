@@ -47,12 +47,6 @@ class MainWindow(QMainWindow):
     def record_label(self):
         self.func_add_name()
 
-    def func_instruction_label(self):
-        self.instruction_label = QLabel(self)
-        self.instruction_label.setText("Look at the webcam")
-        self.instruction_label.setGeometry(170, 50, 200, 40)
-        self.instruction_label.show()
-
     def func_add_name(self):
         self.add_name = QLabel(self)
         self.add_name.setText("Name")
@@ -69,16 +63,12 @@ class MainWindow(QMainWindow):
     def get_name(self):
         student_name = self.addname_field.text()
         self.addname_field.clear()
-        self.func_instruction_label()
+
         self.webcam_access(student_name)
 
     def webcam_access(self, name):
-        self.addname_field.hide()
-        self.add_name.hide()
-
         time.sleep(2)
         click_image(name)
-
 
     def back_button(self):
         self.back_key = QPushButton(self)
