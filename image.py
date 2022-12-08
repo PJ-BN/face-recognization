@@ -53,9 +53,14 @@ class clickImage:
         os.mkdir(path)
         return path
 
-
-
 # parent_path = "/home/zoro/PycharmProjects/attandencesys/images"
 # dir_name = "new"
 # images = clickImage()
 # images.click(parent_dir=parent_path, dir_names=dir_name)
+
+
+def click_image(dir):
+    parent_path = "/home/zoro/PycharmProjects/attandencesys/images"
+
+    images = clickImage()
+    images.click(parent_path, dir)
